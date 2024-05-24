@@ -1,23 +1,9 @@
 #!flask/bin/python
 
 from flask import Flask, jsonify, abort, make_response, request
+from tasks import tasks
 
 app = Flask(__name__)
-
-tasks = [
-    {
-        'id': 1,
-        'title': 'Random things for today!',
-        'description': 'Python, JS',
-        'done': False
-    },
-    {
-        'id': 2,
-        'title': 'Random things for tomorrow!',
-        'description': 'Python, JS',
-        'done': False
-    }
-]
 
 
 @app.route('/todo/api/v1.0/tasks', methods=['GET'])
